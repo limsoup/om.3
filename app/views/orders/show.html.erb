@@ -1,0 +1,59 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Customer name:</strong>
+  <%= @order.customer_name %>
+</p>
+
+<p>
+  <strong>Customer phone:</strong>
+  <%= @order.customer_phone %>
+</p>
+
+<p>
+  <strong>Customer address:</strong>
+  <%= @order.customer_address %>
+</p>
+
+<p>
+  <strong>Restaurant name:</strong>
+  <%= @order.restaurant_name %>
+</p>
+
+<p>
+  <strong>Restaurant address:</strong>
+  <%= @order.restaurant_address %>
+</p>
+
+<p>
+  <strong>Status:</strong>
+  <%= @order.status %>
+</p>
+
+<p>
+  <strong>Driver name:</strong>
+  <%= @order.driver_name %>
+</p>
+
+<p>
+  <strong>Order details:</strong>
+  <%= @order.order_details %>
+</p>
+
+<p>
+  <strong>Total before fee:</strong>
+  <%= @order.total_before_fee %>
+</p>
+
+<p>
+  <strong>Total after fee:</strong>
+  <%= @order.total_after_fee %>
+</p>
+
+<p>
+  <strong>Complete:</strong>
+  <%= @order.complete %>
+</p>
+
+<%= link_to 'Edit', edit_order_path(@order) %> |
+<%= link_to 'Back', orders_path %>

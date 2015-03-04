@@ -1,0 +1,45 @@
+<h1>Listing orders</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Customer name</th>
+      <th>Customer phone</th>
+      <th>Customer address</th>
+      <th>Restaurant name</th>
+      <th>Restaurant address</th>
+      <th>Status</th>
+      <th>Driver name</th>
+      <th>Order details</th>
+      <th>Total before fee</th>
+      <th>Total after fee</th>
+      <th>Complete</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @orders.each do |order| %>
+      <tr>
+        <td><%= order.customer_name %></td>
+        <td><%= order.customer_phone %></td>
+        <td><%= order.customer_address %></td>
+        <td><%= order.restaurant_name %></td>
+        <td><%= order.restaurant_address %></td>
+        <td><%= order.status %></td>
+        <td><%= order.driver_name %></td>
+        <td><%= order.order_details %></td>
+        <td><%= order.total_before_fee %></td>
+        <td><%= order.total_after_fee %></td>
+        <td><%= order.complete %></td>
+        <td><%= link_to 'Show', order %></td>
+        <td><%= link_to 'Edit', edit_order_path(order) %></td>
+        <td><%= link_to 'Destroy', order, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Order', new_order_path %>
