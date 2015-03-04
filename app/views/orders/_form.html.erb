@@ -1,21 +1,76 @@
-<%= simple_form_for(@order) do |f| %>
-  <%= f.error_notification %>
-
-  <div class="form-inputs">
-    <%= f.input :customer_name %>
-    <%= f.input :customer_phone %>
-    <%= f.input :customer_address %>
-    <%= f.input :restaurant_name %>
-    <%= f.input :restaurant_address %>
-    <%= f.input :status %>
-    <%= f.input :driver_name %>
-    <%= f.input :order_details %>
-    <%= f.input :total_before_fee %>
-    <%= f.input :total_after_fee %>
-    <%= f.input :complete %>
+<%= form_for @order, :html => { :class => 'form-horizontal form-model' } do |f| %>
+  <div class="form-group">
+    <%= f.label :customer_name, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_field :customer_name, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :customer_phone, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_field :customer_phone, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :customer_address, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_field :customer_address, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :restaurant_name, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_field :restaurant_name, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :restaurant_address, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_field :restaurant_address, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :status, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_field :status, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :driver_name, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_field :driver_name, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :order_details, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_area :order_details, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :total_before_fee, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.number_field :total_before_fee, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :total_after_fee, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.number_field :total_after_fee, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :complete, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.check_box :complete, :class => 'text-field form-control' %>
+    </div>
   </div>
 
-  <div class="form-actions">
-    <%= f.button :submit %>
+  <div class="form-group">
+    <div class='col-md-offset-2 col-md-10'>
+      <%= f.submit nil, :class => 'btn btn-primary' %>
+      <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                  orders_path, :class => 'btn btn-default' %>
+    </div>
   </div>
 <% end %>

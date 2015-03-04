@@ -1,59 +1,44 @@
-<p id="notice"><%= notice %></p>
+<%- model_class = Order -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => Order %></h1>
+</div>
 
-<p>
-  <strong>Customer name:</strong>
-  <%= @order.customer_name %>
-</p>
+<div class="fieldset">
+  <dl>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:customer_name) %></dt>
+      <dd><pre class="prettyprint"><%= @order.customer_name %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:customer_phone) %></dt>
+      <dd><pre class="prettyprint"><%= @order.customer_phone %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:customer_address) %></dt>
+      <dd><pre class="prettyprint"><%= @order.customer_address %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:restaurant_name) %></dt>
+      <dd><pre class="prettyprint"><%= @order.restaurant_name %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:restaurant_address) %></dt>
+      <dd><pre class="prettyprint"><%= @order.restaurant_address %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:status) %></dt>
+      <dd><pre class="prettyprint"><%= @order.status %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:driver_name) %></dt>
+      <dd><pre class="prettyprint"><%= @order.driver_name %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:order_details) %></dt>
+      <dd><pre class="prettyprint"><%= @order.order_details %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:total_before_fee) %></dt>
+      <dd><pre class="prettyprint"><%= @order.total_before_fee %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:total_after_fee) %></dt>
+      <dd><pre class="prettyprint"><%= @order.total_after_fee %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:complete) %></dt>
+      <dd><pre class="prettyprint"><%= @order.complete %></pre></dd>
+  </dl>
+</div>
 
-<p>
-  <strong>Customer phone:</strong>
-  <%= @order.customer_phone %>
-</p>
+<div class="form-group">
+  <%= link_to t('.back', :default => t("helpers.links.back")),
+              orders_path, :class => 'btn btn-default'  %>
+  <%= link_to t('.edit', :default => t("helpers.links.edit")),
+              edit_order_path(@order), :class => 'btn btn-default' %>
+  <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+              order_path(@order),
+              :method => 'delete',
+              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+              :class => 'btn btn-danger' %>
+</div>
 
-<p>
-  <strong>Customer address:</strong>
-  <%= @order.customer_address %>
-</p>
-
-<p>
-  <strong>Restaurant name:</strong>
-  <%= @order.restaurant_name %>
-</p>
-
-<p>
-  <strong>Restaurant address:</strong>
-  <%= @order.restaurant_address %>
-</p>
-
-<p>
-  <strong>Status:</strong>
-  <%= @order.status %>
-</p>
-
-<p>
-  <strong>Driver name:</strong>
-  <%= @order.driver_name %>
-</p>
-
-<p>
-  <strong>Order details:</strong>
-  <%= @order.order_details %>
-</p>
-
-<p>
-  <strong>Total before fee:</strong>
-  <%= @order.total_before_fee %>
-</p>
-
-<p>
-  <strong>Total after fee:</strong>
-  <%= @order.total_after_fee %>
-</p>
-
-<p>
-  <strong>Complete:</strong>
-  <%= @order.complete %>
-</p>
-
-<%= link_to 'Edit', edit_order_path(@order) %> |
-<%= link_to 'Back', orders_path %>
