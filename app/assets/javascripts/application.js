@@ -16,3 +16,8 @@
 //= require bootstrap
 
 //= require_tree .
+$(document).ready(function() 
+    { 
+        $("#orders_table").tablesorter(); 
+    }
+); 

@@ -1,4 +1,9 @@
+
 <%- model_class = Order -%>
+
+<div class="container-fluid">
+<div class="row-fluid">
+<div class="span-lg-12">
 <div class="page-header">
   <h1><%=t '.title', :default => Order %></h1>
 </div>
@@ -6,14 +11,14 @@
   <thead>
     <tr>
       <th>ID</th>
+      <th><%= model_class.human_attribute_name(:restaurant_name) %></th>
+      <th><%= model_class.human_attribute_name(:restaurant_address) %></th>
+      <th><%= model_class.human_attribute_name(:order_details) %></th>
       <th><%= model_class.human_attribute_name(:customer_name) %></th>
       <th><%= model_class.human_attribute_name(:customer_phone) %></th>
       <th><%= model_class.human_attribute_name(:customer_address) %></th>
-      <th><%= model_class.human_attribute_name(:restaurant_name) %></th>
-      <th><%= model_class.human_attribute_name(:restaurant_address) %></th>
       <th><%= model_class.human_attribute_name(:status) %></th>
       <th><%= model_class.human_attribute_name(:driver_name) %></th>
-      <th><%= model_class.human_attribute_name(:order_details) %></th>
       <th><%= model_class.human_attribute_name(:total_before_fee) %></th>
       <th><%= model_class.human_attribute_name(:total_after_fee) %></th>
       <th><%= model_class.human_attribute_name(:complete) %></th>
@@ -25,14 +30,14 @@
     <% @orders.each do |order| %>
       <tr>
         <td><%= order.id %></td>
+        <td><%= order.restaurant_name %></td>
+        <td><%= order.restaurant_address %></td>
+        <td><%= order.order_details %></td>
         <td><%= order.customer_name %></td>
         <td><%= order.customer_phone %></td>
         <td><%= order.customer_address %></td>
-        <td><%= order.restaurant_name %></td>
-        <td><%= order.restaurant_address %></td>
         <td><%= order.status %></td>
         <td><%= order.driver_name %></td>
-        <td><%= order.order_details %></td>
         <td><%= order.total_before_fee %></td>
         <td><%= order.total_after_fee %></td>
         <td><%= order.complete %></td>
@@ -54,3 +59,6 @@
 <%= link_to t('.new', :default => t("helpers.links.new")),
             new_order_path,
             :class => 'btn btn-primary' %>
+</div>
+</div>
+</div>
