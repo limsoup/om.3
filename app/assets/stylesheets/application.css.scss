@@ -35,3 +35,22 @@
 .form-user {
   max-width: 450px;
 }
+
+.striped:nth-child(2n+1) {
+	background-color: white;
+}
+
+.striped:nth-child(2n) {
+	background-color: yellow;
+}
+
+//save for later
+.striped .quick-change {
+	.outputs {display: block;}
+	.inputs {display: none;}
+}
+
+.striped .quick-change.editing{
+	.outputs {display: none;}
+	.inputs {display: block;}
+}

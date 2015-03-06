@@ -18,7 +18,7 @@
       <div class="row"> -->
         <div class="col-md-12">
           <%= f.label :order_details, :class => 'control-label' %><br/>
-          <%= f.text_field :order_details, :class => 'text-field form-control' %>
+          <%= f.text_area :order_details, :class => 'text-field form-control', :rows=>"6" %>
         </div>
       <!-- </div> -->
     </div>
@@ -37,7 +37,7 @@
         </div>
       </div>
       <div class="row">
-        <div class="span-md-12">
+        <div class="col-md-12">
           <%= f.label :customer_address, :class => 'control-label' %><br/>
           <%= f.text_field :customer_address, :class => 'text-field form-control' %>
         </div>

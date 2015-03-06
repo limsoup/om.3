@@ -16,8 +16,9 @@
 //= require bootstrap
 
 //= require_tree .
-$(document).ready(function() 
-    { 
-        $("#orders_table").tablesorter(); 
-    }
-); 
+// $(document).ready(function() { 
+//         $('.striped').on("dblclick", function(){
+//         	$(this).find('.quick-change').toggleClass('editing');
+//         })
+//     }
+// ); 

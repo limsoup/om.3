@@ -4,7 +4,12 @@ class OrdersController < ApplicationController
   # GET /orders
   # GET /orders.json
   def index
+    @orders = Order.where(complete: false) || []
+  end
+
+  def archive
     @orders = Order.all
+    render 'index'
   end
 
   # GET /orders/1
@@ -43,7 +48,7 @@ class OrdersController < ApplicationController
     respond_to do |format|
       if @order.update(order_params)
         format.html { redirect_to @order, notice: 'Order was successfully updated.' }
-        format.json { render :show, status: :ok, location: @order }
+        format.json { render :'index', status: :ok}
       else
         format.html { render :edit }
         format.json { render json: @order.errors, status: :unprocessable_entity }
@@ -60,6 +65,7 @@ class OrdersController < ApplicationController
       format.json { head :no_content }
     end
   end
+
 
   private
     # Use callbacks to share common setup or constraints between actions.
