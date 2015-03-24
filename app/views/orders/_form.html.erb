@@ -56,11 +56,11 @@
       <div class="row">
         <div class="col-md-4">
           <%= f.label :total_before_fee, :class => 'control-label' %></br>
-          <%= f.number_field :total_before_fee, :class => 'text-field form-control' %>
+          <%= f.number_field :total_before_fee, :class => 'text-field form-control number', :step => 'any' %>
         </div>
         <div class="col-md-4">
           <%= f.label :total_after_fee, :class => 'control-label' %></br>
-          <%= f.number_field :total_after_fee, :class => 'text-field form-control' %>
+          <%= f.number_field :total_after_fee, :class => 'text-field form-control number', :step => 'any' %>
         </div>
         <div class="col-md-4">
           <%= f.label :complete, :class => 'control-label' %><br/>

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150305002638) do
+ActiveRecord::Schema.define(version: 20150322003314) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -41,8 +41,8 @@ ActiveRecord::Schema.define(version: 20150305002638) do
     t.string   "status"
     t.string   "driver_name"
     t.text     "order_details"
-    t.integer  "total_before_fee"
-    t.integer  "total_after_fee"
+    t.decimal  "total_before_fee",   precision: 5, scale: 2
+    t.decimal  "total_after_fee",    precision: 5, scale: 2
     t.boolean  "complete"
     t.datetime "created_at"
     t.datetime "updated_at"
